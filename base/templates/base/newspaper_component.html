@@ -1,0 +1,15 @@
+<div class="topics">
+    <div class="topics__header">
+      <h2>Browse Newspapers</h2>
+    </div>
+    <ul class="topics__list">
+      <li>
+        <a href="{% url 'home'%}" class="active">All Newspapers </a>
+      </li>
+      {% for newspaperTitle in newspaperTitles%}
+        <li>
+            <a href="{% url 'home' %}?newspapername={{newspaperTitle.name}}">{{newspaperTitle.name}} </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>

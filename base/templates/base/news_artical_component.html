@@ -1,0 +1,33 @@
+{% load static %}
+{% for newspaper in newspapers %}
+<div class="roomListRoom">
+    <div class="roomListRoom__header">
+        <a href="{% url 'user-profile' newspaper.newsAdmin.id %}" class="roomListRoom__author">
+            <div class="avatar avatar--small">
+                <img src="{% static 'images/avatar.svg' %}" />
+            </div>
+            <span>@{{newspaper.newsAdmin.username}}</span>
+        </a>
+        <div class="roomListRoom__actions">
+            <span></span>
+        </div>
+    </div>
+    <div class="roomListRoom__content">
+        <a href="{% url 'newspaper' newspaper.id%}">{{newspaper.name}}</a>
+        <p>
+            {{newspaper.descriptoin}}
+        </p>
+    </div>
+</div>
+{% endfor %}
+
+
+<!-- {% for newspaper in newspapers %}
+    <div>
+        <a href="{% url 'update-newspaper' newspaper.id%}">Edit</a>
+        <a href="{% url 'delete-newspaper' newspaper.id%}">Delete</a><br>
+        <a href="{% url 'user-profile' newspaper.newsAdmin.id %}">{{newspaper.newsAdmin.username}}</a>
+        <h5>{{newspaper.id}} -- <a href="{% url 'newspaper' newspaper.id%}">{{newspaper.name}}</a></h5>
+    </div>
+    <hr>
+{% endfor %} -->
