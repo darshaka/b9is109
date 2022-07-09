@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
@@ -86,6 +86,7 @@ def newspaper(request, pk):
     return render(request, 'base/newspaper.html', selectedNewsPaper)
 
 @login_required(login_url="login")
+@permission_required('is_staff')
 def newspaper_create(request):
     form = NewsPaperForm()
     if request.method == 'POST':
