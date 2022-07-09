@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-fp*+6jh4xi!5rwj4n=)-g=f(^q5anj$qxr-2g7gtdm!tf6t+!j
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'localhost',
 	'b9is109-10594668.herokuapp.com',
 	'https://b9is109-10594668.herokuapp.com/'
 ]
