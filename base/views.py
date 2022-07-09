@@ -86,7 +86,7 @@ def newspaper(request, pk):
     return render(request, 'base/newspaper.html', selectedNewsPaper)
 
 @login_required(login_url="login")
-@permission_required('is_staff')
+@permission_required('is_staff', )
 def newspaper_create(request):
     form = NewsPaperForm()
     if request.method == 'POST':
